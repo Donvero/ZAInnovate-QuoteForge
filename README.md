@@ -9,10 +9,10 @@
 **QuoteForge** is a production-grade, revenue-generating SaaS engineered specifically for South African contractors, freelancers, SMMEs, and government tenderers. It automates SARS Section 20 tax compliance, generates crystal-clear quotations and tax invoices with live calculations, integrates Paystack for frictionless ZAR payments, and formats official procurement credentials (CSD, B-BBEE, TCS PIN, EFT banking confirmation).
 
 ### 🎨 Brand Identity & Palette
-- **Brand:** ZAInnovate Technologies (Pty) Ltd (Reg: `2024/098765/07`)
+- **Brand:** ZAInnovate Technologies (Pty) Ltd (Reg: `2025/572318/07` • CSD: `MAAA1646894`)
 - **Primary Navy:** `#0E1B2E`
 - **Accent Gold:** `#FFC20E`
-- **Headquarters:** Beacon Bay, East London, Eastern Cape, South Africa
+- **Headquarters:** 14 Abdullah Ibrahim Close, Belgravia Valley, East London, Eastern Cape, 5241, South Africa
 
 ---
 
@@ -43,7 +43,7 @@
 - **Business Suite Tier (R149 / mo):** Multi-user team collaboration, automated recurring billing, B-BBEE audit logs
 
 ### 5. Instant Vector PDF & Resend Email Delivery
-- Ultra-sharp `@react-pdf/renderer` vector PDF generation
+- Zero-dependency pure PDF 1.4 binary stream generator (`src/lib/pdf.ts`)
 - Direct client email delivery via Resend API with PDF attachments
 
 ---
@@ -56,7 +56,7 @@
 - **Database / ORM:** PostgreSQL (Supabase) + Prisma ORM
 - **Authentication:** NextAuth.js (JWT Strategy)
 - **Payments:** Paystack South Africa (ZAR Cents, Webhooks, Subscriptions)
-- **PDF Generation:** `@react-pdf/renderer`
+- **PDF Generation:** Pure PDF 1.4 Binary Generator (Zero-Dependency)
 - **Email:** Resend API
 
 ---
@@ -147,11 +147,41 @@ npx prisma generate
 npx prisma db push
 ```
 
-### 5. Run Development Server
+### 5. Run automated statutory & document numbering tests
 ```bash
-npm run dev
+npx vitest run
 ```
-Open [http://localhost:3000](http://localhost:3000) to view the application.
+Expected output: **12/12 tests passed (100%)** across:
+- `vat-sars.test.ts` (15.0% VAT math, exempt vs standard, Rand amount formatting in words)
+- `document-numbering.test.ts` (Sequential serial prefixes `INV-YYYY-XXXX` and `QT-YYYY-XXXX`)
+
+### 6. Build for production
+```bash
+npm run build
+```
+Compiles with strict TypeScript verification across all 12 routes and React `<Suspense>` boundaries.
+
+---
+
+## 💎 Design Taste & Sovereign Studio Standards
+
+QuoteForge is engineered according to anti-AI-slop design and craft engineering standards derived from [`Donvero/hallmark`](https://github.com/Donvero/hallmark) and [`Donvero/taste-skill`](https://github.com/Donvero/taste-skill):
+- **The Floor:** WCAG AAA contrast (Studio Obsidian `#08101C`, Card Navy `#0E1B2E`, Gold Accent `#FFC20E`), tactile document state toggles, and dual-pane layout that folds gracefully on mobile.
+- **True-to-Life Document Geometry:** The document canvas simulates authentic South African tax invoice paper specifications, with high-density tabular line-item accounting.
+- **Monospace Financial Alignments:** All rand values (`R 51,750.00`), VAT proportions, and CSD supplier codes use tabular monospace figures to ensure decimal-point alignment.
+- **Zero AI Slop:** No placeholder business templates, no fake demo data in production, and zero generic marketing copy. Built strictly for South African statutory compliance.
+
+---
+
+## 📜 Sovereign IP, Forkability & Public View License
+
+This repository is published for **public view, peer inspection, and statutory accounting review**.
+
+- **Public View & Review:** Public inspection and technical evaluation are permitted.
+- **Forkability & Commercial Use:** Forking, redistribution, deployment, or commercial utilization of the QuoteForge codebase, PDF generator, or billing workflows is **strictly subject to prior written approval of the owner**:
+  - **Owner:** Fana Siyasanga Qhawe Mgengo ([@Donvero](https://github.com/Donvero))
+  - **Entity:** ZAinnovate Technologies (Pty) Ltd (Reg: 2025/572318/07)
+  - **Licensing Contact:** `director@zainnovate.co.za` | `legal@zainnovate.co.za`
 
 ---
 
@@ -168,6 +198,18 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ---
 
-## 📄 License & Ownership
-Copyright © 2026 **ZAInnovate Technologies (Pty) Ltd**.  
-All rights reserved. 100% Black Youth-Owned • B-BBEE Level 1 Contributor • East London, South Africa.
+## 🏢 Corporate Governance
+
+**ZAInnovate Technologies (Pty) Ltd**
+- **Company Registration:** 2025/572318/07
+- **National Treasury CSD:** MAAA1646894
+- **B-BBEE Status:** Level 1 Contributor (135% Procurement Spend Recognition)
+- **Headquarters:** 14 Abdullah Ibrahim Close, Belgravia Valley, East London, Eastern Cape, 5241
+- **Website:** [https://zainnovate.co.za](https://zainnovate.co.za)
+- **Contact:** `billing@zainnovate.co.za` | `contact@zainnovate.co.za`
+
+---
+
+<div align="center">
+  <sub>QuoteForge is sovereign software engineered by ZAInnovate Technologies (Pty) Ltd. Copyright © 2025–2026. All sovereign rights reserved. Built with mathematical rigor in East London, South Africa.</sub>
+</div>
