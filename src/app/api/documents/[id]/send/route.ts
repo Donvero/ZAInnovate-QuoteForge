@@ -1,8 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
 import { generateDocumentPdf } from "@/lib/pdf";
 import { DocumentData } from "@/types";
 import { formatZAR } from "@/lib/currency";
+
+class Resend {
+  constructor(private apiKey: string) {}
+  emails = {
+    send: async (params: any) => {
+      if (!this.apiKey || this.apiKey.startsWith("mock")) {
+        return { data: { id: `mock_${Date.now()}` }, error: null };
+      }
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${this.apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(params),
+      });
+      return await res.json();
+    },
+  };
+}
 
 const resend = new Resend(process.env.RESEND_API_KEY || "mock_resend_dev_key");
 

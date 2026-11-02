@@ -707,7 +707,7 @@ export function DocumentBuilder({
                   <input
                     type="text"
                     required
-                    value={newClientData.companyName}
+                    value={newClientData.companyName || ""}
                     onChange={(e) => setNewClientData({ ...newClientData, companyName: e.target.value })}
                     placeholder="e.g. Amathole Construction"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -718,7 +718,7 @@ export function DocumentBuilder({
                   <input
                     type="text"
                     required
-                    value={newClientData.name}
+                    value={newClientData.name || ""}
                     onChange={(e) => setNewClientData({ ...newClientData, name: e.target.value })}
                     placeholder="e.g. Sipho Ndlovu"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -732,7 +732,7 @@ export function DocumentBuilder({
                   <input
                     type="email"
                     required
-                    value={newClientData.email}
+                    value={newClientData.email || ""}
                     onChange={(e) => setNewClientData({ ...newClientData, email: e.target.value })}
                     placeholder="procurement@client.co.za"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -742,7 +742,7 @@ export function DocumentBuilder({
                   <label className="font-semibold text-slate-400 block mb-1">Phone Number</label>
                   <input
                     type="tel"
-                    value={newClientData.phone}
+                    value={newClientData.phone || ""}
                     onChange={(e) => setNewClientData({ ...newClientData, phone: e.target.value })}
                     placeholder="+27 (0) 82 000 0000"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -754,7 +754,7 @@ export function DocumentBuilder({
                 <label className="font-semibold text-slate-400 block mb-1">Physical Street Address</label>
                 <input
                   type="text"
-                  value={newClientData.address}
+                  value={newClientData.address || ""}
                   onChange={(e) => setNewClientData({ ...newClientData, address: e.target.value })}
                   placeholder="12 Commercial Road, Beacon Bay"
                   className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -766,7 +766,7 @@ export function DocumentBuilder({
                   <label className="font-semibold text-slate-400 block mb-1">City</label>
                   <input
                     type="text"
-                    value={newClientData.city}
+                    value={newClientData.city || ""}
                     onChange={(e) => setNewClientData({ ...newClientData, city: e.target.value })}
                     placeholder="East London"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -776,7 +776,7 @@ export function DocumentBuilder({
                   <label className="font-semibold text-slate-400 block mb-1">Province</label>
                   <input
                     type="text"
-                    value={newClientData.province}
+                    value={newClientData.province || ""}
                     onChange={(e) => setNewClientData({ ...newClientData, province: e.target.value })}
                     placeholder="Eastern Cape"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -786,7 +786,7 @@ export function DocumentBuilder({
                   <label className="font-semibold text-slate-400 block mb-1">Postal Code</label>
                   <input
                     type="text"
-                    value={newClientData.postalCode}
+                    value={newClientData.postalCode || ""}
                     onChange={(e) => setNewClientData({ ...newClientData, postalCode: e.target.value })}
                     placeholder="5241"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -800,7 +800,7 @@ export function DocumentBuilder({
                   <label className="font-semibold text-slate-400 block mb-1">SARS VAT Number</label>
                   <input
                     type="text"
-                    value={newClientData.vatNumber}
+                    value={newClientData.vatNumber || ""}
                     onChange={(e) => setNewClientData({ ...newClientData, vatNumber: e.target.value })}
                     placeholder="4000123456"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -810,7 +810,7 @@ export function DocumentBuilder({
                   <label className="font-semibold text-slate-400 block mb-1">Treasury CSD Number</label>
                   <input
                     type="text"
-                    value={newClientData.csdNumber}
+                    value={newClientData.csdNumber || ""}
                     onChange={(e) => setNewClientData({ ...newClientData, csdNumber: e.target.value })}
                     placeholder="MAAA0123456"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"

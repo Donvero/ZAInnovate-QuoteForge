@@ -277,7 +277,7 @@ export default function ClientsPage() {
                   <input
                     type="text"
                     required
-                    value={formData.companyName}
+                    value={formData.companyName || ""}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                     placeholder="e.g. Eastern Cape Infrastructure Services"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -288,7 +288,7 @@ export default function ClientsPage() {
                   <input
                     type="text"
                     required
-                    value={formData.name}
+                    value={formData.name || ""}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Siphesihle Ndlovu"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -302,7 +302,7 @@ export default function ClientsPage() {
                   <input
                     type="email"
                     required
-                    value={formData.email}
+                    value={formData.email || ""}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="billing@ecis.co.za"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -312,7 +312,7 @@ export default function ClientsPage() {
                   <label className="font-semibold text-slate-400 block mb-1">Phone Number</label>
                   <input
                     type="tel"
-                    value={formData.phone}
+                    value={formData.phone || ""}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+27 (0) 83 234 5678"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -324,7 +324,7 @@ export default function ClientsPage() {
                 <label className="font-semibold text-slate-400 block mb-1">Physical Address</label>
                 <input
                   type="text"
-                  value={formData.address}
+                  value={formData.address || ""}
                   onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                   placeholder="14 Oxford Street, City Centre"
                   className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -336,7 +336,7 @@ export default function ClientsPage() {
                   <label className="font-semibold text-slate-400 block mb-1">City</label>
                   <input
                     type="text"
-                    value={formData.city}
+                    value={formData.city || ""}
                     onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                     placeholder="East London"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -346,7 +346,7 @@ export default function ClientsPage() {
                   <label className="font-semibold text-slate-400 block mb-1">Province</label>
                   <input
                     type="text"
-                    value={formData.province}
+                    value={formData.province || ""}
                     onChange={(e) => setFormData({ ...formData, province: e.target.value })}
                     placeholder="Eastern Cape"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -356,7 +356,7 @@ export default function ClientsPage() {
                   <label className="font-semibold text-slate-400 block mb-1">Postal Code</label>
                   <input
                     type="text"
-                    value={formData.postalCode}
+                    value={formData.postalCode || ""}
                     onChange={(e) => setFormData({ ...formData, postalCode: e.target.value })}
                     placeholder="5201"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -369,7 +369,7 @@ export default function ClientsPage() {
                   <label className="font-semibold text-slate-400 block mb-1">SARS VAT Number</label>
                   <input
                     type="text"
-                    value={formData.vatNumber}
+                    value={formData.vatNumber || ""}
                     onChange={(e) => setFormData({ ...formData, vatNumber: e.target.value })}
                     placeholder="4820194857"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
@@ -379,7 +379,7 @@ export default function ClientsPage() {
                   <label className="font-semibold text-slate-400 block mb-1">Treasury CSD Number</label>
                   <input
                     type="text"
-                    value={formData.csdNumber}
+                    value={formData.csdNumber || ""}
                     onChange={(e) => setFormData({ ...formData, csdNumber: e.target.value })}
                     placeholder="MAAA0938472"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"

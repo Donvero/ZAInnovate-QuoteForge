@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { DocumentBuilder } from "@/components/documents/DocumentBuilder";
 import { DocumentType } from "@/types";
 
-export default function NewDocumentPage() {
+function NewDocumentContent() {
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
   
@@ -18,5 +18,13 @@ export default function NewDocumentPage() {
     <div>
       <DocumentBuilder initialDocument={{ type: docType }} />
     </div>
+  );
+}
+
+export default function NewDocumentPage() {
+  return (
+    <Suspense fallback={<div className="p-8 text-center text-slate-400">Loading document builder...</div>}>
+      <NewDocumentContent />
+    </Suspense>
   );
 }
