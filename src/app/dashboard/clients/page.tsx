@@ -22,15 +22,15 @@ import { formatZAR } from "@/lib/currency";
 const INITIAL_CLIENTS: (ClientData & { totalBilled: number; docCount: number })[] = [
   {
     id: "cl_1",
-    name: "Siphesihle Ndlovu",
-    companyName: "Eastern Cape Infrastructure Services",
-    email: "sndlovu@ecis.co.za",
-    phone: "+27 (0) 83 234 5678",
+    name: "Example Contact",
+    companyName: "Example Infrastructure Services",
+    email: "contact@example.test",
+    phone: "Not configured",
     address: "14 Oxford Street, City Centre",
     city: "East London",
     province: "Eastern Cape",
     postalCode: "5201",
-    vatNumber: "4820194857",
+    vatNumber: "0000000000",
     csdNumber: "MAAA0938472",
     totalBilled: 92000,
     docCount: 3,
@@ -38,14 +38,14 @@ const INITIAL_CLIENTS: (ClientData & { totalBilled: number; docCount: number })[
   {
     id: "cl_2",
     name: "Anathi Gqirana",
-    companyName: "Amathole Logistics & Projects",
-    email: "agqirana@amatholelogistics.co.za",
-    phone: "+27 (0) 82 998 1234",
+    companyName: "Example Logistics & Projects",
+    email: "billing@example.test",
+    phone: "Not configured",
     address: "5 Gloucester Road, Vincent",
     city: "East London",
     province: "Eastern Cape",
     postalCode: "5247",
-    vatNumber: "4710293849",
+    vatNumber: "0000000000",
     csdNumber: "MAAA0458123",
     totalBilled: 35075,
     docCount: 2,
@@ -53,14 +53,14 @@ const INITIAL_CLIENTS: (ClientData & { totalBilled: number; docCount: number })[
   {
     id: "cl_3",
     name: "Dr. Lindiwe Mthembu",
-    companyName: "Buffalo City Health Diagnostics",
-    email: "procurement@bchealth.co.za",
-    phone: "+27 (0) 43 748 9000",
+    companyName: "Example Health Services",
+    email: "procurement@example.test",
+    phone: "Not configured",
     address: "Berea Medical Centre",
     city: "East London",
     province: "Eastern Cape",
     postalCode: "5214",
-    vatNumber: "4392019284",
+    vatNumber: "0000000000",
     csdNumber: "MAAA0192847",
     totalBilled: 71300,
     docCount: 1,
@@ -279,7 +279,7 @@ export default function ClientsPage() {
                     required
                     value={formData.companyName || ""}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    placeholder="e.g. Eastern Cape Infrastructure Services"
+                    placeholder="e.g. Example Infrastructure Services"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
                   />
                 </div>
@@ -290,7 +290,7 @@ export default function ClientsPage() {
                     required
                     value={formData.name || ""}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. Siphesihle Ndlovu"
+                    placeholder="e.g. Example Contact"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
                   />
                 </div>
@@ -314,7 +314,7 @@ export default function ClientsPage() {
                     type="tel"
                     value={formData.phone || ""}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+27 (0) 83 234 5678"
+                    placeholder="Not configured"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
                   />
                 </div>
@@ -371,7 +371,7 @@ export default function ClientsPage() {
                     type="text"
                     value={formData.vatNumber || ""}
                     onChange={(e) => setFormData({ ...formData, vatNumber: e.target.value })}
-                    placeholder="4820194857"
+                    placeholder="0000000000"
                     className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-white focus:outline-none focus:border-[#FFC20E]"
                   />
                 </div>

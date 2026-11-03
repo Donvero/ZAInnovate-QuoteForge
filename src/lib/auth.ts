@@ -1,5 +1,7 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { prisma } from "@/lib/db";
+import { compare } from "bcryptjs";
 
 export const authOptions: NextAuthOptions = {
   session: {
@@ -17,15 +19,18 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials?.email) return null;
-
-        // In a production app, verify password hash with bcrypt against prisma.user.
-        // For demonstration and initial setup, provide seamless login.
+        if (!credentials?.email || !credentials.password) return null;
+        const user = await prisma.user.findUnique({
+          where: { email: credentials.email.toLowerCase().trim() },
+        });
+        if (!user?.passwordHash || !(await compare(credentials.password, user.passwordHash))) {
+          return null;
+        }
         return {
-          id: "usr_zainnovate_demo",
-          name: "Sipho Khumalo",
-          email: credentials.email,
-          image: null,
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          image: user.image,
         };
       },
     }),
@@ -34,16 +39,17 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       if (session.user && token.sub) {
         (session.user as any).id = token.sub;
-        (session.user as any).companyId = "comp_zainnovate_01";
+        (session.user as any).companyId = token.companyId;
       }
       return session;
     },
     async jwt({ token, user }) {
       if (user) {
         token.sub = user.id;
+        token.companyId = (user as { companyId?: string | null }).companyId;
       }
       return token;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET || "quoteforge-super-secret-key-development",
+  secret: process.env.NEXTAUTH_SECRET,
 };

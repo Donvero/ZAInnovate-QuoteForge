@@ -30,7 +30,7 @@ export default function BillingPage() {
         body: JSON.stringify({
           action: "initialize_subscription",
           plan: planKey,
-          email: "invoicing@zainnovate.co.za",
+          email: "billing@example.test",
         }),
       });
       const data = await res.json();

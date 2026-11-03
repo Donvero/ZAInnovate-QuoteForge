@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { DocumentData } from "@/types";
 import { calculateDocumentTotals } from "@/lib/vat";
@@ -6,6 +8,11 @@ import { generateDocumentNumber } from "@/lib/document-number";
 
 export async function GET(req: NextRequest) {
   try {
+    const session = await getServerSession(authOptions);
+    const companyId = (session?.user as { companyId?: string } | undefined)?.companyId;
+    if (!companyId) {
+      return NextResponse.json({ success: false, error: "Authentication required" }, { status: 401 });
+    }
     const { searchParams } = new URL(req.url);
     const type = searchParams.get("type");
     const status = searchParams.get("status");
@@ -14,6 +21,7 @@ export async function GET(req: NextRequest) {
     try {
       const documents = await prisma.document.findMany({
         where: {
+          companyId,
           ...(type && { type: type as any }),
           ...(status && { status: status as any }),
         },
@@ -26,13 +34,11 @@ export async function GET(req: NextRequest) {
       });
 
       return NextResponse.json({ success: true, data: documents });
-    } catch (dbErr) {
-      // In standalone / pre-migration mode, return simulated active store
-      return NextResponse.json({
-        success: true,
-        data: [],
-        note: "Database connection initializing; using client state",
-      });
+    } catch {
+      return NextResponse.json(
+        { success: false, error: "Document storage is unavailable" },
+        { status: 503 }
+      );
     }
   } catch (error: any) {
     return NextResponse.json(
@@ -44,6 +50,12 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
+    const session = await getServerSession(authOptions);
+    const companyId = (session?.user as { companyId?: string } | undefined)?.companyId;
+    if (!companyId) {
+      return NextResponse.json({ success: false, error: "Authentication required" }, { status: 401 });
+    }
+    const userId = (session?.user as { id?: string } | undefined)?.id;
     const body: DocumentData = await req.json();
 
     const totals = calculateDocumentTotals(body.items, body.discount);
@@ -59,7 +71,8 @@ export async function POST(req: NextRequest) {
     try {
       const created = await prisma.document.create({
         data: {
-          companyId: body.companyId || "comp_zainnovate_01",
+          companyId,
+          userId,
           clientId: body.clientId,
           type: body.type as any,
           status: (body.status as any) || "DRAFT",
@@ -96,19 +109,11 @@ export async function POST(req: NextRequest) {
       });
 
       return NextResponse.json({ success: true, data: created });
-    } catch (dbErr) {
-      // Return normalized payload if DB is not configured locally yet
-      return NextResponse.json({
-        success: true,
-        data: {
-          ...body,
-          id: `doc_${Date.now()}`,
-          number: docNumber,
-          subtotal: totals.subtotal,
-          vatAmount: totals.vatAmount,
-          total: totals.total,
-        },
-      });
+    } catch {
+      return NextResponse.json(
+        { success: false, error: "Document storage is unavailable" },
+        { status: 503 }
+      );
     }
   } catch (error: any) {
     return NextResponse.json(
