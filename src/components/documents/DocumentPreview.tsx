@@ -23,35 +23,35 @@ export function DocumentPreview({
     id: "default_company",
     name: "ZAInnovate Technologies (Pty) Ltd",
     tradingName: "ZAInnovate Technologies",
-    regNumber: "2024/098765/07",
-    vatNumber: "4190283746",
-    taxPin: "9834710294",
-    csdNumber: "MAAA1289456",
+    regNumber: "EXAMPLE/000000/00",
+    vatNumber: "0000000000",
+    taxPin: "0000000000",
+    csdNumber: "EXAMPLE000000",
     bbbeeLevel: "B-BBEE Level 1 Contributor (100% Black Youth Owned)",
     address: "Beacon Bay Commercial Park, Pearl Road",
     city: "East London",
     province: "Eastern Cape",
     postalCode: "5241",
-    phone: "+27 (0) 43 700 1200",
-    email: "invoicing@zainnovate.co.za",
+    phone: "Not configured",
+    email: "billing@example.test",
     bankName: "First National Bank (FNB)",
     accountHolder: "ZAInnovate Technologies (Pty) Ltd",
-    accountNumber: "62891234567",
-    branchCode: "250655",
+    accountNumber: "Not configured",
+    branchCode: "Not configured",
     accountType: "Cheque / Business Current Account",
   };
 
   const client = propClient || doc.client || {
     id: "default_client",
-    name: "Siphesihle Ndlovu",
-    companyName: "Eastern Cape Infrastructure Services",
-    email: "sndlovu@ecis.co.za",
-    phone: "+27 (0) 83 234 5678",
+    name: "Example Contact",
+    companyName: "Example Infrastructure Services",
+    email: "contact@example.test",
+    phone: "Not configured",
     address: "14 Oxford Street, City Centre",
     city: "East London",
     province: "Eastern Cape",
     postalCode: "5201",
-    vatNumber: "4820194857",
+    vatNumber: "0000000000",
     csdNumber: "MAAA0938472",
   };
 
@@ -291,21 +291,21 @@ export function DocumentPreview({
 
             <div className="grid grid-cols-2 gap-x-2 gap-y-1.5 text-[11px]">
               <span className="text-slate-500 font-semibold">Bank:</span>
-              <span className="font-bold text-[#0E1B2E]">{company.bankName || "FNB"}</span>
+              <span className="font-bold text-[#0E1B2E]">              {company.bankName || "Bank details not configured"}</span>
 
               <span className="text-slate-500 font-semibold">Account Holder:</span>
               <span className="font-bold text-[#0E1B2E]">{company.accountHolder || company.name}</span>
 
               <span className="text-slate-500 font-semibold">Account Number:</span>
               <span className="font-mono font-black text-[#0E1B2E] text-xs">
-                {company.accountNumber || "62891234567"}
+                {company.accountNumber || "Account number not configured"}
               </span>
 
               <span className="text-slate-500 font-semibold">Branch Code:</span>
-              <span className="font-mono font-bold text-[#0E1B2E]">{company.branchCode || "250655"}</span>
+              <span className="font-mono font-bold text-[#0E1B2E]">              {company.branchCode || "Branch code not configured"}</span>
 
               <span className="text-slate-500 font-semibold">Account Type:</span>
-              <span className="text-[#0E1B2E]">{company.accountType || "Business Cheque"}</span>
+              <span className="text-[#0E1B2E]">              {company.accountType || "Account type not configured"}</span>
 
               <span className="text-slate-500 font-semibold">Payment Reference:</span>
               <span className="font-mono font-black text-[#0E1B2E] bg-[#FFC20E]/40 px-1.5 py-0.5 rounded">
@@ -392,7 +392,7 @@ export function DocumentPreview({
             {company.name} | Proudly South African SMME Software by ZAInnovate Technologies (Pty) Ltd
           </p>
           <p>
-            100% Black Youth-Owned • B-BBEE Level 1 Contributor • Reg No: 2024/098765/07 • Beacon Bay, East London, South Africa
+            100% Black Youth-Owned • B-BBEE Level 1 Contributor • Reg No: EXAMPLE/000000/00 • Beacon Bay, East London, South Africa
           </p>
         </div>
 

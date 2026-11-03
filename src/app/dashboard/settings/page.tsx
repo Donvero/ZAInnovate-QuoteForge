@@ -22,22 +22,22 @@ export default function SettingsPage() {
     id: "comp_zainnovate_01",
     name: "ZAInnovate Technologies (Pty) Ltd",
     tradingName: "ZAInnovate Technologies",
-    regNumber: "2024/098765/07",
-    vatNumber: "4190283746",
-    taxPin: "9834710294",
-    csdNumber: "MAAA1289456",
+    regNumber: "EXAMPLE/000000/00",
+    vatNumber: "0000000000",
+    taxPin: "0000000000",
+    csdNumber: "EXAMPLE000000",
     bbbeeLevel: "Level 1 Contributor (100% Black Youth Owned)",
     address: "Beacon Bay Commercial Park, Pearl Road",
     city: "East London",
     province: "Eastern Cape",
     postalCode: "5241",
-    phone: "+27 (0) 43 700 1200",
-    email: "invoicing@zainnovate.co.za",
+    phone: "Not configured",
+    email: "billing@example.test",
     website: "https://zainnovate.co.za",
     bankName: "First National Bank (FNB)",
     accountHolder: "ZAInnovate Technologies (Pty) Ltd",
-    accountNumber: "62891234567",
-    branchCode: "250655",
+    accountNumber: "Not configured",
+    branchCode: "Not configured",
     accountType: "Cheque / Business Current Account",
     defaultVatRate: 15.0,
     quotePrefix: "QT-",
@@ -117,7 +117,7 @@ export default function SettingsPage() {
                 type="text"
                 value={company.regNumber || ""}
                 onChange={(e) => setCompany({ ...company, regNumber: e.target.value })}
-                placeholder="2024/098765/07"
+                placeholder="EXAMPLE/000000/00"
                 className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 font-mono text-white focus:outline-none focus:border-[#FFC20E]"
               />
             </div>
@@ -127,7 +127,7 @@ export default function SettingsPage() {
                 type="text"
                 value={company.vatNumber || ""}
                 onChange={(e) => setCompany({ ...company, vatNumber: e.target.value })}
-                placeholder="4190283746"
+                placeholder="0000000000"
                 className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 font-mono text-white focus:outline-none focus:border-[#FFC20E]"
               />
             </div>
@@ -138,7 +138,7 @@ export default function SettingsPage() {
                 type="text"
                 value={company.taxPin || ""}
                 onChange={(e) => setCompany({ ...company, taxPin: e.target.value })}
-                placeholder="9834710294"
+                placeholder="0000000000"
                 className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 font-mono text-white focus:outline-none focus:border-[#FFC20E]"
               />
             </div>
@@ -148,7 +148,7 @@ export default function SettingsPage() {
                 type="text"
                 value={company.csdNumber || ""}
                 onChange={(e) => setCompany({ ...company, csdNumber: e.target.value })}
-                placeholder="MAAA1289456"
+                placeholder="EXAMPLE000000"
                 className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 font-mono text-white focus:outline-none focus:border-[#FFC20E]"
               />
             </div>
@@ -282,7 +282,7 @@ export default function SettingsPage() {
                 type="text"
                 value={company.accountNumber || ""}
                 onChange={(e) => setCompany({ ...company, accountNumber: e.target.value })}
-                placeholder="62891234567"
+                placeholder="Not configured"
                 className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 font-mono text-white focus:outline-none focus:border-[#FFC20E]"
               />
             </div>
@@ -292,7 +292,7 @@ export default function SettingsPage() {
                 type="text"
                 value={company.branchCode || ""}
                 onChange={(e) => setCompany({ ...company, branchCode: e.target.value })}
-                placeholder="250655"
+                placeholder="Not configured"
                 className="w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 font-mono text-white focus:outline-none focus:border-[#FFC20E]"
               />
             </div>

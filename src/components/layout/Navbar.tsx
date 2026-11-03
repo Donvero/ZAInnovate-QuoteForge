@@ -100,7 +100,7 @@ export function Navbar() {
               </Link>
               <div className="flex items-center gap-3 pl-2 sm:pl-4 border-l border-slate-800">
                 <div className="flex flex-col text-right hidden sm:block">
-                  <span className="text-xs font-semibold text-white">Sipho Khumalo</span>
+                  <span className="text-xs font-semibold text-white">Demo User</span>
                   <span className="text-[10px] text-slate-400">ZAInnovate Technologies</span>
                 </div>
                 <div className="h-9 w-9 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 text-sm font-bold">

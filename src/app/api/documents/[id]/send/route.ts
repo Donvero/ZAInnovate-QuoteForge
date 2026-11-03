@@ -45,10 +45,16 @@ export async function POST(
 
     // In production with valid RESEND_API_KEY, generate PDF and send email
     if (process.env.RESEND_API_KEY) {
+      if (!process.env.EMAIL_FROM) {
+        return NextResponse.json(
+          { success: false, error: "Email sender is not configured" },
+          { status: 503 }
+        );
+      }
       const pdfBuffer = await generateDocumentPdf(doc);
 
       await resend.emails.send({
-        from: process.env.EMAIL_FROM || "QuoteForge <invoicing@zainnovate.co.za>",
+        from: process.env.EMAIL_FROM,
         to: [doc.client.email],
         subject,
         html: `

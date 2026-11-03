@@ -105,7 +105,7 @@ export function Hero() {
                         ZAInnovate Technologies (Pty) Ltd
                       </span>
                     </div>
-                    <p className="text-slate-500 text-xs mt-1">Reg No: 2024/098765/07 | VAT No: 4190283746</p>
+                    <p className="text-slate-500 text-xs mt-1">Reg No: EXAMPLE/000000/00 | VAT No: 0000000000</p>
                     <p className="text-slate-500 text-xs">Beacon Bay, East London, 5241</p>
                   </div>
                   <div className="sm:text-right">
@@ -120,14 +120,14 @@ export function Hero() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 text-xs">
                   <div>
                     <span className="text-slate-400 font-semibold uppercase text-[10px] tracking-wider">Billed To</span>
-                    <p className="font-bold text-slate-900 mt-0.5">Khumalo Logistics & Transport (Pty) Ltd</p>
-                    <p className="text-slate-600">VAT No: 4900123456</p>
+                    <p className="font-bold text-slate-900 mt-0.5">Example Logistics (Pty) Ltd</p>
+                    <p className="text-slate-600">VAT No: 0000000000</p>
                     <p className="text-slate-600">Sandton, Johannesburg</p>
                   </div>
                   <div className="sm:text-right">
                     <span className="text-slate-400 font-semibold uppercase text-[10px] tracking-wider">Payment Method</span>
                     <p className="font-bold text-slate-900 mt-0.5">FNB EFT / Paystack Direct</p>
-                    <p className="text-slate-600">Account: 62891234567 | Branch: 250655</p>
+                    <p className="text-slate-600">Bank details configured in Company Settings</p>
                   </div>
                 </div>
 

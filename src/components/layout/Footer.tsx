@@ -94,18 +94,18 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#FFC20E] flex-shrink-0" />
-                <span>invoicing@zainnovate.co.za</span>
+                <span>billing@example.test</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#FFC20E] flex-shrink-0" />
-                <span>+27 (0) 43 700 1200</span>
+                <span>Not configured</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} ZAInnovate Technologies (Pty) Ltd. Reg: 2024/098765/07. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ZAInnovate Technologies (Pty) Ltd. Reg: EXAMPLE/000000/00. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Built with pride in South Africa <span className="text-[#FFC20E]">🇿🇦</span>
           </p>
