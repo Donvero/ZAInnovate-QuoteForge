@@ -16,30 +16,26 @@ import { formatZAR } from "@/lib/currency";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#0E1B2E] via-[#0E1B2E] to-slate-900 text-white pt-16 pb-24 md:pt-24 md:pb-32">
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#FFC20E]/10 blur-[130px] rounded-full pointer-events-none" />
+    <section className="relative overflow-hidden bg-[#0E1B2E] text-white pt-16 pb-24 md:pt-24 md:pb-32">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-6">
           
-          {/* Trust Pill */}
-          <div className="inline-flex items-center gap-2 rounded-full bg-slate-800/90 border border-amber-500/30 px-3.5 py-1.5 text-xs text-slate-300 shadow-sm animate-fade-in">
-            <span className="flex h-2 w-2 rounded-full bg-[#FFC20E]" />
-            <span className="font-semibold text-[#FFC20E]">ZAInnovate Technologies</span>
-            <span className="text-slate-500">•</span>
-            <span>100% Black Youth-Owned • B-BBEE Level 1</span>
+          <div className="flex items-center justify-center gap-3 text-xs text-slate-400">
+            <span className="h-px w-8 bg-[#FFC20E]" />
+            <span>QuoteForge by ZAInnovate</span>
+            <span className="text-slate-600">/</span>
+            <span>Built for South African SMMEs</span>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.15]">
-            Professional quotes & <br className="hidden sm:inline" />
-            invoices in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC20E] via-amber-300 to-amber-500">seconds</span>.
+            Send a quote that is ready to be paid.
           </h1>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
-            The all-in-one quotation and SARS-compliant tax invoice platform built specifically for South African SMMEs, contractors, and entrepreneurs.
+            Build quotations, tax invoices, and payment-ready documents with the South African fields your business already uses.
           </p>
 
           {/* Call to Actions */}
@@ -49,13 +45,13 @@ export function Hero() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#FFC20E] px-7 py-3.5 text-base font-bold text-[#0E1B2E] hover:bg-amber-400 transition-all shadow-lg shadow-[#FFC20E]/20 hover:scale-[1.02] active:scale-[0.98]"
             >
               <Sparkles className="w-5 h-5 text-[#0E1B2E]" />
-              Create Free Quote / Invoice
+              Create a document
             </Link>
             <Link
               href="/dashboard"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-slate-800/90 border border-slate-700 px-6 py-3.5 text-base font-semibold text-white hover:bg-slate-800 hover:border-slate-600 transition-all"
             >
-              Live Demo Dashboard
+              View the workspace
               <ArrowRight className="w-4 h-4 text-slate-400" />
             </Link>
           </div>
@@ -63,16 +59,16 @@ export function Hero() {
           {/* Feature checklist */}
           <div className="pt-6 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-300">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#FFC20E]" /> SARS 15% VAT Ready
+              <CheckCircle2 className="w-4 h-4 text-[#FFC20E]" /> VAT calculations
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#FFC20E]" /> Paystack ZAR Payments
+              <CheckCircle2 className="w-4 h-4 text-[#FFC20E]" /> ZAR documents
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#FFC20E]" /> Free 5 Documents / Month
+              <CheckCircle2 className="w-4 h-4 text-[#FFC20E]" /> Sequential numbering
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-[#FFC20E]" /> Instant PDF & Email
+              <CheckCircle2 className="w-4 h-4 text-[#FFC20E]" /> PDF export
             </span>
           </div>
 
